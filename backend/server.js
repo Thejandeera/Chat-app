@@ -2,6 +2,7 @@ import express from 'express';
 import dotenv from 'dotenv';
 import cookieParser from 'cookie-parser'; // Import cookie-parser
 import authRoutes from './routes/auth.Routes.js';
+import messageRoutes from './routes/message.Routes.js';
 import connectToMongoDB from './db/connectToMongoDB.js';
 
 dotenv.config(); // Load environment variables before using them
@@ -13,6 +14,7 @@ app.use(express.json());
 app.use(cookieParser()); // Use cookie-parser middleware
 
 app.use('/api/auth', authRoutes);
+app.use('/api/messages', messageRoutes);
 
 app.listen(PORT, () => {
     connectToMongoDB();
