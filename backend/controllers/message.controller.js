@@ -5,15 +5,15 @@ export const sendMessage = async (req,res)=>{
    try{
     const {message}= req.body;
     const{id:recieverId}= req.params;
-    const senderID = req.user._id
+    const senderId = req.user._id
 
     let conversation = await Conversation.findOne({
-        participants:{$all:[senderID,recieverId]},
+        participants:{$all:[senderId,recieverId]},
     })
 
     if(!conversation){
         conversation = await Conversation.creatr({
-            participants:[senderID,recieverId],
+            participants:[senderId,recieverId],
         })
     }
 
