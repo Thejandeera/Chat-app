@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Login = () => {
   return (
@@ -13,21 +14,21 @@ const Login = () => {
             <form>
                 <div>
                     <label className='label p-2' >
-                        <span className='text-base label-text' >Username</span>
+                        <span className='text-base label-text text-gray-50' >Username</span>
                     </label>
                     <input type='text' placeholder='Enter Username' className='w-full input input-bordered h-10' />
                 </div>
 
                 <div>
                 <label className='label ' >
-                        <span className='text-base label-text' >Password</span>
+                        <span className='text-base label-text text-gray-50' >Password</span>
                     </label>
                     <input type='password' placeholder='Enter Password' className='w-full input input-border h-10' />
                 </div>
 
-                <a href='0' className='text-sm hover:underline hover:text-black mt-2 inline-block' >
-                    {"Don't"} have an account ?
-                </a>
+                <Link to='/signup' className='text-sm text-gray-50 hover:underline hover:text-blue-600 mt-2 inline-block'>
+						{"Don't"} have an account?
+					</Link>
                 <div>
                     <button className='btn btn-block btn-sm mt-2' >Login</button>
                 </div>
