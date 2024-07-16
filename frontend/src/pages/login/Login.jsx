@@ -8,7 +8,7 @@ const Login = () => {
         backdrop-filter backdrop-blur-lg bg-opacity-0' >
 
             <h1 className='text-3xl font-semibold text-center text-gray-50' >Login
-                <span className='text-black' > ChatApp</span>
+                <span className='text-black' > Chat Web</span>
             </h1>
 
             <form>
