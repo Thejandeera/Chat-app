@@ -6,10 +6,10 @@ export const signup = async (req, res) => {
     try {
         const { fullName, userName, password, confirmPassword, gender } = req.body;
 
-        if (password !== confirmPassword) {
+        if (password == confirmPassword) {
             return res.status(400).json({ error: "Passwords don't match" });
         }
-
+        
         const user = await User.findOne({ userName });
         if (user) {
             return res.status(400).json({ error: "Username already exists" });
@@ -30,6 +30,7 @@ export const signup = async (req, res) => {
         });
 
         if(newUser){
+            
             generateTokenAndSetCookie(newUser._id, res);
             await newUser.save();
 
